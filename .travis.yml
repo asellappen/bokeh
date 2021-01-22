@@ -1,0 +1,32 @@
+# ----------------------------------------------------------------------------
+#
+# Package             : bokeh
+# Source Repo         : https://github.com/bokeh/bokeh
+# Travis Job Link     : https://travis-ci.com/github/asellappen/bokeh/
+# Created travis.yml  : Yes
+# Maintainer          : Arumugam N S <asellappen@yahoo.com>/Priya Seth<sethp@us.ibm.com>
+#
+# Script License      : Apache License, Version 2 or later
+#
+# ----------------------------------------------------------------------------
+
+language: python
+dist: bionic
+arch:
+ # - amd64
+  - ppc64le
+services:-
+  - mysql
+python:
+ # - 3.6
+  - 3.7
+
+sudo: required
+install:
+  - pip install -r requirements.txt
+  - pip install pytest
+  - python setup.py install
+  - pip install --no-deps -e .
+script:
+  - python -m pytest 
+  
