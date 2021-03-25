@@ -46,8 +46,8 @@ before_install:
   
 
 script:
-  - bash ci/install_node_modules.sh
   - bash ci/build_bokehjs.sh
+  - bash ci/install_node_modules.sh
   - python -c 'import bokeh; bokeh.sampledata.download(progress=False)'
   - python -m pytest -v --tb=short --driver chrome --color=yes tests/integration
   - python -m pytest -v  tests/unit/
