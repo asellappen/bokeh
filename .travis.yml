@@ -44,9 +44,12 @@ before_install:
   - conda update -q --all
   - conda install python=$PYTHON_VERSION pip  pytest-xdist pytest
   
+install:
+  - pip install --no-deps -e .
+  - node make build
 
 script:
-  - bash ci/build_bokehjs.sh
+ # - bash ci/build_bokehjs.sh
   - bash ci/install_node_modules.sh
   - python -c 'import bokeh; bokeh.sampledata.download(progress=False)'
   - python -m pytest -v --tb=short --driver chrome --color=yes tests/integration
