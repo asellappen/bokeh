@@ -40,6 +40,7 @@ before_install:
   - conda update -q --all
   - conda install python=$PYTHON_VERSION pip  pytest-xdist pytest
   - conda env create environment.yml
+  - conda init conda init
   - conda activate bkdev
   - cd bokehjs
   - npm install -g npm@7
