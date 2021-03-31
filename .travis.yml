@@ -14,17 +14,13 @@ language: python
 
 dist: bionic
 
-arch:
-  - amd64
-  - ppc64le
-
 matrix:
   include:
-  - env: PYTHON_VERSION="3.7"
+  - env: PYTHON_VERSION="3.6"
   #- env: PYTHON_VERSION="3.8"
   #- env: PYTHON_VERSION="3.7"
   #  arch: ppc64le
-  - env: PYTHON_VERSION="3.7"
+  - env: PYTHON_VERSION="3.6"
     arch: ppc64le
 
 sudo: required
