@@ -15,7 +15,7 @@ language: python
 dist: bionic
 
 arch:
- # - amd64
+  - amd64
   - ppc64le
 
 matrix:
@@ -49,7 +49,7 @@ install:
   - node make build
 
 script:
- # - bash ci/build_bokehjs.sh
+  - bash ci/build_bokehjs.sh
   - bash ci/install_node_modules.sh
   - python -c 'import bokeh; bokeh.sampledata.download(progress=False)'
   - python -m pytest -v --tb=short --driver chrome --color=yes tests/integration
