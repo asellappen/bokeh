@@ -50,9 +50,8 @@ before_install:
 
   
 install:
-
-    - python setup.py develop --install-js
     - python setup.py develop --build-js
+    - python setup.py develop --install-js
     - python setup.py install
 
 script:
