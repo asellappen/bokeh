@@ -43,7 +43,7 @@ before_install:
  # - conda init bash
  # - conda activate bkdev
   - cd bokehjs
-  - npm install -g npm@7
+  - npm install -g npm@14
   - npm ci
   - cd ..
   
